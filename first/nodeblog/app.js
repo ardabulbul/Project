@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+
 app.set("view engine", "ejs");
 
 app.listen(3000);
@@ -16,8 +17,8 @@ app.get("/about", (req, res) => {
   res.render("about", { title: "Hakkimizda" });
 });
 
-app.get("/about-us", (req, res) => {
-  res.redirect("/about");
+app.get("/aboutus", (req, res) => {
+  res.redirect("/login");
 });
 
 app.get("/login", (req, res) => {
