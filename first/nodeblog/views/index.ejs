@@ -8,18 +8,13 @@
     <section>
       <h1>Yazilar</h1>
       <ul>
+        <% blogs.forEach(blog => { %>
         <li>
-          <a href="#">Blog1</a>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <a href="#"><%=blog.title%></a>
+          <p><%=blog.short%></p>
         </li>
-        <li>
-          <a href="#">Blog2</a>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </li>
-        <li>
-          <a href="#">Blog3</a>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </li>
+
+        <% }) %>
       </ul>
     </section>
   </body>
