@@ -1,9 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-
 const adminRoutes = require("./routes/adminRoutes");
 const blogRoutes = require("./routes/blogRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -23,6 +23,9 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.redirect("/blog");
 });
+
+app.use("/", authRoutes);
+
 app.use("/blog", blogRoutes);
 
 app.use("/admin", adminRoutes);
@@ -32,12 +35,9 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/aboutus", (req, res) => {
-  res.redirect("/login");
+  res.redirect("/about");
 });
 
-app.get("/login", (req, res) => {
-  res.render("login", { title: "Giriş" });
-});
 app.use((req, res) => {
   res.status(404).render("404", { title: "Sayfa Bulunamadi" });
 });
