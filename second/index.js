@@ -1,24 +1,18 @@
-var http = require("http");
-var fs = require("fs");
-var server = http.createServer((req, res) => {
-  if (req.url == "/") {
-    fs.readFile("index.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  } else if (req.url == "/urunler") {
-    fs.readFile("urunler.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  } else {
-    fs.readFile("404.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  }
+const express = require("express");
+const app = express();
+
+app.use("/urunler/:id", function (req, res) {
+  res.send("urunler details " + req.params.id);
 });
 
-server.listen(3000, () => {
-  console.log("node.js server at port 3000");
+app.use("/urunler", function (req, res) {
+  res.send("urunler");
+});
+
+app.use("/", function (req, res) {
+  res.send("anasayfa");
+});
+
+app.listen(3000, () => {
+  console.log("listening on port 3000");
 });
