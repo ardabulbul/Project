@@ -7,5 +7,17 @@
   </head>
   <body>
     <h1>urunler</h1>
+    <p><%= liste[0].name %> <%= liste[0].price %></p>
+
+    <ul>
+      <% liste.forEach(urun => { %> <% if (urun.price >= 40000 && urun.isActive)
+      { %>
+      <li>
+        <a href="/urunler/<%= urun.id %>">
+          <%= urun.name %> - <%= urun.price %>
+        </a>
+      </li>
+      <% } %> <% }) %>
+    </ul>
   </body>
 </html>
