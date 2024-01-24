@@ -1,16 +1,18 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use("/urunler/:id", function (req, res) {
-  res.send("urunler details " + req.params.id);
+  res.render("urun-details", { id: req.params.id });
 });
 
 app.use("/urunler", function (req, res) {
-  res.send("urunler");
+  res.render("urunler");
 });
 
 app.use("/", function (req, res) {
-  res.send("anasayfa");
+  res.render("index");
 });
 
 app.listen(3000, () => {
