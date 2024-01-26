@@ -6,6 +6,14 @@
     <title>urunler</title>
   </head>
   <body>
-    <h1>urun detay</h1>
+    <h1><%= name %></h1>
+    <p>fiyat: <%= price %></p>
+    <p>
+      <% if (isActive) { %>
+      <span>urun satista</span>
+      <% } else { %>
+      <span>urun satista degil</span>
+      <% } %>
+    </p>
   </body>
 </html>
