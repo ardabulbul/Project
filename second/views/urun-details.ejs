@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>urunler</title>
   </head>
   <body>
     <h1><%= name %></h1>
-    <img src="/images/<%= imageUrl || '' %>" alt width="100" />
+    <% if (imageUrl) { %>
+    <img src="/images/<%= imageUrl %>" alt width="100" />
+    <% } %>
     <p>fiyat: <%= price %></p>
     <p>
       <% if (isActive) { %>
