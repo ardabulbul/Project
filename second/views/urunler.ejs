@@ -1,23 +1,39 @@
+<!-- urunler.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
     <title>urunler</title>
   </head>
   <body>
-    <h1>urunler</h1>
-    <p><%= liste[0].name %> <%= liste[0].price %></p>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <% liste.forEach(urun => { %>
 
-    <ul>
-      <% liste.forEach(urun => { %> <% if (urun.price >= 40000 && urun.isActive)
-      { %>
-      <li>
-        <a href="/urunler/<%= urun.id %>">
-          <%= urun.name %> - <%= urun.price %>
-        </a>
-      </li>
-      <% } %> <% }) %>
-    </ul>
+          <div class="card mb-3">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="/images/<%= urun.imageUrl %>"
+                  alt=""
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= urun.name %></h5>
+                  <p class="card-text"><%= urun.price %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
