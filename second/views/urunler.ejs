@@ -1,5 +1,3 @@
-<!-- urunler.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,7 +23,9 @@
               </div>
               <div class="col-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%= urun.name %></h5>
+                  <h5 class="card-title">
+                    <a href="/urunler/<%= urun.id %>"> <%= urun.name %> </a>
+                  </h5>
                   <p class="card-text"><%= urun.price %></p>
                 </div>
               </div>

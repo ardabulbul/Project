@@ -7,18 +7,39 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>urunler</title>
   </head>
-  <body class="bg-warning">
-    <h1><%= name %></h1>
-    <% if (imageUrl) { %>
-    <img src="/images/<%= imageUrl %>" alt width="100" />
-    <% } %>
-    <p>fiyat: <%= price %></p>
-    <p>
-      <% if (isActive) { %>
-      <span>urun satista</span>
-      <% } else { %>
-      <span>urun satista degil</span>
-      <% } %>
-    </p>
+  <body>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-3">
+            <div class="row">
+              <div class="col-4">
+                <img src="/images/<%= imageUrl %>" alt="" class="img-fluid" />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%=name %></h5>
+                  <p class="card-text"><%=price %></p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Deleniti tempora eos maxime iusto voluptatibus
+                    necessitatibus sed! Praesentium inventore repudiandae
+                    exercitationem voluptatum aperiam nam veritatis?
+                    Consequuntur ipsum nesciunt nostrum enim voluptas!
+                  </p>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Deleniti tempora eos maxime iusto voluptatibus
+                    necessitatibus sed! Praesentium inventore repudiandae
+                    exercitationem voluptatum aperiam nam veritatis?
+                    Consequuntur ipsum nesciunt nostrum enim voluptas!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
