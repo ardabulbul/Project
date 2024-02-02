@@ -1,0 +1,22 @@
+<!-- new-article.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeni Makale Ekle</title>
+  </head>
+  <body>
+    <h1>Yeni Makale Ekle</h1>
+    <form action="/new-article" method="post">
+      <label for="title">Başlık:</label>
+      <input type="text" id="title" name="title" required />
+      <br />
+      <label for="content">İçerik:</label>
+      <textarea id="content" name="content" required></textarea>
+      <br />
+      <button type="submit">Ekle</button>
+    </form>
+    <a href="/">Ana Sayfa</a>
+  </body>
+</html>
