@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Görev Takip Uygulaması</title>
+  </head>
+  <body>
+    <h1>Görevler</h1>
+    <ul>
+      <% tasks.forEach((task, index) => { %>
+      <li><%= task %> <a href="/delete-task/<%= index %>">(Sil)</a></li>
+      <% }); %>
+    </ul>
+    <form action="/add-task" method="post">
+      <label for="task">Yeni Görev:</label>
+      <input type="text" id="task" name="task" required />
+      <button type="submit">Ekle</button>
+    </form>
+  </body>
+</html>
