@@ -1,0 +1,30 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List Uygulaması</title>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <ul>
+      <% todos.forEach((todo, index) => { %>
+      <li>
+        <form action="/toggle-todo/<%= index %>" method="post">
+          <input type="checkbox" name="done" <%= todo.done ? 'checked' : '' %>
+          onchange="this.form.submit()">
+        </form>
+        <span <%= todo.done ? 'style="text-decoration: line-through;"' : '' %>><%= todo.text %></span>
+
+        <a href="/delete-todo/<%= index %>">(Sil)</a>
+      </li>
+      <% }); %>
+    </ul>
+    <form action="/add-todo" method="post">
+      <label for="todo">Yeni Görev:</label>
+      <input type="text" id="todo" name="todo" required />
+      <button type="submit">Ekle</button>
+    </form>
+  </body>
+</html>
