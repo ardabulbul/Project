@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anket Uygulaması</title>
+  </head>
+  <body>
+    <h1>Anket Soruları</h1>
+    <form action="/submit-survey" method="post">
+      <% questions.forEach((question, index) => { %>
+      <label><%= question %></label>
+      <% if (index === 0) { %>
+      <input type="text" name="color" required />
+      <% } else if (index === 1) { %>
+      <input type="checkbox" name="languages" value="JavaScript" /> JavaScript
+      <input type="checkbox" name="languages" value="Python" /> Python
+      <input type="checkbox" name="languages" value="Java" /> Java
+      <!-- Diğer dilleri ekleyebilirsiniz -->
+      <% } else if (index === 2) { %>
+      <select name="favoriteLanguage" required>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <!-- Diğer dilleri ekleyebilirsiniz -->
+      </select>
+      <% } %>
+      <br />
+      <% }); %>
+      <button type="submit">Anketi Gönder</button>
+    </form>
+  </body>
+</html>

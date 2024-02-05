@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anket Sonuçları</title>
+  </head>
+  <body>
+    <h1>Anket Sonuçları</h1>
+    <h2>Renk Tercihleri:</h2>
+    <ul>
+      <% Object.keys(results.color).forEach(color => { %>
+      <li><%= color %>: <%= results.color[color] %> kişi</li>
+      <% }); %>
+    </ul>
+    <h2>Kullanılan Diller:</h2>
+    <ul>
+      <% Object.keys(results.languages).forEach(language => { %>
+      <li><%= language %>: <%= results.languages[language] %> kişi</li>
+      <% }); %>
+    </ul>
+    <h2>En Sevilen Programlama Dili:</h2>
+    <ul>
+      <% Object.keys(results.favoriteLanguage).forEach(favoriteLanguage => { %>
+      <li>
+        <%= favoriteLanguage %>: <%= results.favoriteLanguage[favoriteLanguage]
+        %> kişi
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
