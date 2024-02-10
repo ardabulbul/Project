@@ -8,6 +8,13 @@
   </head>
   <body>
     <h1>Express News App</h1>
+    <form action="/add-news" method="post">
+      <label for="newsTitle">Başlık:</label>
+      <input type="text" id="newsTitle" name="title" required />
+      <label for="newsContent">İçerik:</label>
+      <textarea id="newsContent" name="content" required></textarea>
+      <button type="submit">Haber Ekle</button>
+    </form>
     <ul>
       <% news.forEach((article, index) => { %>
       <li>

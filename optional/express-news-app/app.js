@@ -1,28 +1,31 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+
 const app = express();
 const port = 3000;
 
-// Middlewares
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Routes
+const news = [
+  { title: "Başlık 1", content: "İçerik 1" },
+  { title: "Başlık 2", content: "İçerik 2" },
+  { title: "Başlık 3", content: "İçerik 3" },
+];
+
 app.get("/", (req, res) => {
-  res.render("index", { news: getSampleNews() });
+  res.render("index", { news });
 });
 
-// Sample News Data
-function getSampleNews() {
-  return [
-    { title: "Başlık 1", content: "İçerik 1" },
-    { title: "Başlık 2", content: "İçerik 2" },
-    { title: "Başlık 3", content: "İçerik 3" },
-  ];
-}
+app.post("/add-news", (req, res) => {
+  const { title, content } = req.body;
+  const newNews = { title, content };
+  news.push(newNews);
+  res.redirect("/");
+});
 
-// Set EJS as the view engine
 app.set("view engine", "ejs");
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
