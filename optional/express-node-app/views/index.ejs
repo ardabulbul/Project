@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express Notes App</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Notlar</h1>
+    <ul>
+      <% notes.forEach((note, index) => { %>
+      <li>
+        <h2><a href="/note/<%= note.id %>"><%= note.title %></a></h2>
+        <p><%= note.content %></p>
+        <a href="/edit/<%= note.id %>">Düzenle</a> |
+        <a href="/delete/<%= note.id %>">Sil</a>
+      </li>
+      <% }); %>
+    </ul>
+    <a href="/add">Yeni Not Ekle</a>
+  </body>
+</html>

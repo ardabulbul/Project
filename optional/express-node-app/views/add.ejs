@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express Notes App - Yeni Not Ekle</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Yeni Not Ekle</h1>
+    <form action="/add" method="post">
+      <label for="noteTitle">Başlık:</label>
+      <input type="text" id="noteTitle" name="title" required />
+      <label for="noteContent">İçerik:</label>
+      <textarea id="noteContent" name="content" required></textarea>
+      <button type="submit">Notu Ekle</button>
+    </form>
+    <a href="/">Ana Sayfa</a>
+  </body>
+</html>
