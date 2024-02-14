@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Library</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Movie Library</h1>
+    <ul>
+      <% movies.forEach(movie => { %>
+      <li>
+        <a href="/movie/<%= movie.id %>"><%= movie.title %></a>
+        <a href="/edit/<%= movie.id %>">Edit</a>
+        <a href="/delete/<%= movie.id %>">Delete</a>
+      </li>
+      <% }); %>
+    </ul>
+    <a href="/add">Add Movie</a>
+  </body>
+</html>
