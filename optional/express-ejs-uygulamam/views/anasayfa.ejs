@@ -1,0 +1,30 @@
+<!-- views/anasayfa.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anasayfa</title>
+  </head>
+  <body>
+    <h1>Express.js ve EJS ile Öğe Ekleme ve Silme</h1>
+
+    <form action="/ekle" method="post">
+      <label for="yeniOge">Yeni Öğe:</label>
+      <input type="text" id="yeniOge" name="yeniOge" required />
+      <button type="submit">Ekle</button>
+    </form>
+
+    <ul>
+      <% liste.forEach((oge, index) => { %>
+      <li>
+        <%= oge %>
+        <form action="/sil" method="post" style="display: inline">
+          <input type="hidden" name="silinecekOgeIndex" value="<%= index %>" />
+          <button type="submit">Sil</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
