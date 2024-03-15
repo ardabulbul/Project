@@ -1,0 +1,12 @@
+<%- include('layout', { body: posts.map(post => `
+<article>
+  <h2>${post.title}</h2>
+  <p>${post.content}</p>
+</article>
+`).join('') }) %>
+
+<form action="/post" method="POST">
+  <input type="text" name="title" placeholder="Başlık" required /><br />
+  <textarea name="content" placeholder="İçerik" required></textarea><br />
+  <button type="submit">Gönder</button>
+</form>
