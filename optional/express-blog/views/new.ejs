@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yeni Blog Yazısı</title>
+  </head>
+  <body>
+    <h1>Yeni Blog Yazısı Ekle</h1>
+    <form action="/new" method="post">
+      <label for="title">Başlık:</label>
+      <input type="text" id="title" name="title" required />
+      <br />
+      <label for="content">İçerik:</label>
+      <textarea id="content" name="content" required></textarea>
+      <br />
+      <button type="submit">Gönder</button>
+    </form>
+  </body>
+</html>
