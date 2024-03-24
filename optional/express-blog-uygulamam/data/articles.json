@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Express.js Nedir?",
+    "content": "Express.js, Node.js tabanlı hızlı, esnek ve minimalist web uygulaması çerçevesidir."
+  },
+  {
+    "id": 2,
+    "title": "Node.js İle Web Uygulaması Geliştirme",
+    "content": "Node.js kullanarak web uygulamaları geliştirmek oldukça esnek ve güçlü bir yöntemdir."
+  }
+]
