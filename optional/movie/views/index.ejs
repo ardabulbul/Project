@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tüm Filmler</title>
+  </head>
+  <body>
+    <h1>Tüm Filmler</h1>
+    <ul>
+      <% films.forEach(film => { %>
+      <li>
+        <a href="/film/<%= film.id %>"><%= film.title %></a>
+        <form method="POST" action="/film/sil/<%= film.id %>">
+          <button type="submit">Sil</button>
+        </form>
+      </li>
+      <% }); %>
+    </ul>
+    <a href="/film/ekle">Yeni Film Ekle</a>
+  </body>
+</html>
